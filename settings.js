@@ -1,34 +1,24 @@
-const fs = require("node:fs");
+const fs = require('node:fs');
 
 const config = {
-  owner: ["6282114275683", "6281910094713"],
-  name: "- NekoBot - Simple WhatsApp bot",
-  sessions: "sessions",
-  prefix: [".", "?", "!"], // Tambahkan prefix sesuai kebutuhan
-  sticker: {
-    packname: "✨ NekoPack ✨", 
-    author: "🐾 AxellNetwork 🐾", 
-  },
-  id: {
-    newsletter: "120363388655497053@newsletter", 
-    group: "120363370515588374@g.us" 
-  },
-  messages: {
-    wait: "> ⏳ *Mohon tunggu sebentar*... Kami sedang memproses permintaan Anda, harap bersabar ya!", 
-    owner: "> 🧑‍💻 *Fitur ini hanya untuk pemilik bot*... Maaf, Anda tidak memiliki akses ke fitur ini.", 
-    premium: "> 🥇 *Upgrade ke Premium* untuk mendapatkan akses ke fitur eksklusif, murah dan cepat! Hubungi admin untuk info lebih lanjut.", 
-    group: "> 👥 *Fitur ini hanya tersedia di grup*... Pastikan Anda berada di grup WhatsApp untuk mengakses fitur ini.",
-    botAdmin: "> ⚠️ *Anda harus menjadi admin grup* untuk menggunakan fitur ini, karena bot memerlukan hak akses admin.", 
-    grootbotbup: "> 🛠️ *Jadikan NekoBot sebagai admin* grup untuk menggunakan fitur ini. Pastikan Anda memberikan hak admin kepada bot.", 
-  },
-  database: "neko-db",
-  tz: "Asia/Jakarta",
-};
+    owner: ["5493476274029"], // tu número en formato internacional (Argentina)
+    name: "- nekoBot - Simple WhatsApp bot",
+    sessions: "sessions",
+    sticker: {
+        packname: "Hecho por",
+        author: "nekoBot"
+    },
+    messages: {
+        wait: "*( Cargando )* Por favor espera...",
+        owner: "*( Denegado )* No eres el propietario del bot!",
+        premium: "*( Denegado )* Esta función es solo para usuarios premium",
+        group: "*( Denegado )* Esta función es solo para grupos",
+    },
+    database: "neko-db",
+    tz: "America/Argentina/Buenos_Aires" // zona horaria correcta para Argentina
+}
 
 module.exports = config;
-
-let file = require.resolve(__filename);
-fs.watchFile(file, () => {
   fs.unwatchFile(file);
   delete require.cache[file];
 });
